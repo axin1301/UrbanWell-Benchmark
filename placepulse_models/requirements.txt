@@ -1,0 +1,7 @@
+pandas
+Pillow
+torch
+torchvision
+huggingface_hub 
+transformers 
+PILLOW
