@@ -1,0 +1,34 @@
+country_code,country_name,city_name,city_full_name,province,note
+NLD,netherlands,AMSTERDAM,amsterdam,Noord-Holland,no
+GRC,greece,ATHINA,athens,Attica,no
+SRB,serbia,BEOGRAD,belgrade,Beograd,no
+DEU,germany,BERLIN,berlin,Berlin,no
+SVK,slovakia,BRATISLAVA,bratislava,Bratislava,no
+BEL,belgium,BRUXELLES,brussels,Brussels-Capital,no
+ROU,romania,BUCURESTI,bucharest,Bucharest,no
+HUN,hungary,BUDAPEST,budapest,Budapest,no
+IRL,ireland,DUBLIN,dublin,Dublin,ireland-and-northern-ireland
+HRV,croatia,GRAD,zagreb,Zagreb,no
+AUT,austria,GRAZ,graz,Styria,no
+DNK,denmark,KOBENHAVN,copenhagen,Hovedstaden,no
+CYP,cyprus,LEFKOSIA,nicosia,Nicosia District,no
+PRT,portugal,LISBOA,lisbon,Lisbon,no
+SVN,slovenia,LJUBLJANA,ljubljana,Central Slovenia,no
+GBR,united kingdom,LONDON,london,England,greater-london
+ESP,spain,MADRID,madrid,Madrid,no
+NOR,norway,OSLO,oslo,Oslo,no
+FRA,france,PARIS,paris,Île-de-France,ile-de-france
+CZE,czechia,PRAHA,prague,Prague,czech-republic
+XKX,kosovo,PRISTINA,pristina,Pristina,no
+LVA,latvia,RIGA,riga,Riga,no
+ITA,italy,ROMA,rome,Lazio,centro
+BIH,bosnia and herzegovina,SARAJEVO,sarajevo,Sarajevo Canton,bosnia-herzegovina
+MKD,north macedonia,SKOPJE,skopje,Skopje,macedonia
+BGR,bulgaria,SOFIA,sofia,Sofia City,no
+SWE,sweden,STOCKHOLM,stockholm,Stockholm County,no
+EST,estonia,TALLINN,tallinn,Harju County,no
+ALB,albania,TIRANA,tirana,Tirana,no
+LTU,lithuania,VILNIUS,vilnius,Vilnius County,no
+POL,poland,WARSZAWA,warsaw,Mazovia,mazowieckie
+AUT,austria,WIEN,vienna,Vienna,no
+CHE,switzerland,ZURICH,zurich,Zürich,no

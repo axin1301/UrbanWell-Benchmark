@@ -1,0 +1,1 @@
+Download here and unzip urban atlas land use change data from https://land.copernicus.eu/en/products/urban-atlas/urban-atlas-change-2012-2018
