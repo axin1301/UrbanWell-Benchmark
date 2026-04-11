@@ -110,6 +110,17 @@ OpenRouter CLI example:
 python -m evaluate.global.metrics --model_name="openai/gpt-4o" --task_type="single" --task_name="population"
 ```
 
+Supported arguments:
+- `--model_name`: OpenRouter model name, using the OpenRouter model zoo naming format.
+- `--task_type`: one of `single`, `multi_year_type1`, `multi_year_type3`.
+- `--task_name`: indicator name, such as `population`, `NO2`, `beautiful`, or `avg_dist_to_restaurant`.
+- `--benchmark_dir`: optional benchmark JSON directory. If omitted, the code uses `benchmark_dataset_rewritten/` when available, otherwise `benchmark_dataset/`.
+- `--results_root`: output root directory for predictions and metric summaries. Default: `evaluate/results`.
+- `--existing_mode`: one of `reuse`, `missing`, `rerun`.
+- `--api_key`: optional OpenRouter API key passed directly from the command line.
+- `--max_samples`: optional limit for debugging on a subset of samples.
+- `--timeout`: HTTP timeout in seconds for each OpenRouter request.
+
 ## UrbanWell Benchmark Construction step 1: Data Collection
 
 We will introduce the raw dataset collection procedures.
@@ -174,6 +185,7 @@ flowchart TD
    `single-year estimation`, `multi-year forecasting`, and `multi-year trend analysis`.
 
 4. `benchmark_dataset` contains the final benchmark data.
+
 
 
 
