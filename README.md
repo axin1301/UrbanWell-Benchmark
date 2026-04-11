@@ -44,6 +44,15 @@ download environmental raw data and generate CO2, NDVI, NO2, PM2.5, and quiet-ar
 - `generate_dataset`:
 construct the final benchmark datasets for single-year estimation, multi-year forecasting, and multi-year trend analysis.
 
+## Installation
+
+Install Python dependencies.
+
+```bash
+conda create -n citylens python==3.10
+pip install -r requirements.txt
+
+
 ## Workflow
 
 ```mermaid
