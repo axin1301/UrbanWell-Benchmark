@@ -22,7 +22,7 @@ The benchmark is constructed through a multi-stage pipeline, including data coll
 
 The benchmark covers multiple indicator categories and task settings across cities and years. A detailed composition summary is provided below.
 
-[Benchmark composition figure](./figs/sunburst.pdf)
+[Benchmark composition figure](./figs/sunburst.png)
 
 ##Dataset Construction
 This directory contains the code files prepared for constructing the UrbanWell dataset, grouped by module:
