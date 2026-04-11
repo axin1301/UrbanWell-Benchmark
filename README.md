@@ -4,7 +4,7 @@
 In this work, we introduce UrbanWell, a large-scale benchmark designed to systematically evaluate the spatio-temporal reasoning capabilities of MLLMs for urban wellbeing analytics through joint modeling of satellite and street view imagery. 
 
 ## Framework
-UrbanWell is a large-scale benchmark designed to systematically evaluate the spatio-temporal reasoning capabilities of MLLMs for urban wellbeing analytics through joint modeling of satellite and street view imagery. UrbanWell spans 38 cities across multiple years and includes diverse indicators covering (1) environmental conditions (CO2, NO2, PM2.5, and normalized difference vegetation index), (2) spatial accessibility (minimum distance to supermarkets and restaurants), (3) urban form (road length, road density, and land use), (4) urban vitality (population, economic activity diversity, and land use diversity), and (5) subjective perception attributes (e.g., safety, beauty, liveliness, wealth, and quietness). All indicators are aligned at grid level to enable standardized evaluation. Beyond static prediction, UrbanWell defines temporal reasoning tasks, including future value forecasting from historical observations and temporal trend classification. We benchmark 15 representative state-of-the-art MLLMs under a zero-shot setting, providing a comprehensive comparative evaluation across spatial and temporal dimensions. Experimental results indicate that while MLLMs capture salient spatial and perceptual cues, their performance varies substantially across heterogeneous urban indicators spanning environment and subjective perception. UrbanWell serves as a unified benchmark for evaluating multimodal spatial and temporal reasoning in urban wellbeing analytics, offering a standardized testbed for systematic assessment and future research on multimodal urban intelligence.
+UrbanWell is a large-scale benchmark designed to systematically evaluate the spatio-temporal reasoning capabilities of MLLMs for urban wellbeing analytics through joint modeling of satellite and street view imagery. UrbanWell spans 38 cities across multiple years and includes diverse indicators covering (1) environmental conditions (CO2, NO2, PM2.5, and normalized difference vegetation index), (2) spatial accessibility (minimum distance to supermarkets and restaurants), (3) urban form (road length, road density, and land use), (4) urban vitality (population, economic activity diversity, and land use diversity), and (5) subjective perception attributes (e.g., safety, beauty, liveliness, wealth, and quietness). All indicators are aligned at grid level to enable standardized evaluation. Beyond static prediction, UrbanWell defines temporal reasoning tasks, including future value forecasting from historical observations and temporal trend classification. We benchmark 15 representative state-of-the-art MLLMs under a zero-shot setting, providing a comprehensive comparative evaluation across spatial and temporal dimensions.
 
 ![UrbanWell framework](./figs/Framework-v3.png)
 
@@ -74,11 +74,11 @@ At a high level, the evaluation workflow is:
 
 This release mainly focuses on evaluation-time usage: obtaining image data from metadata, placing the files into the corresponding directories, and running benchmark evaluation. Detailed support for the full benchmark construction pipeline, including raw ground-truth collection, intermediate processing, and benchmark generation, will be provided in the following sections.
 
-### Downloading Street View Images from metadata_stv.json
+### 1. Downloading Street View Images from metadata_stv.json
 
 Use `metadata_stv.json` to retrieve the required street view images and place them under your local street view image directory.
 
-### Downloading Satellite Images from metadata_sat.json
+### 2. Downloading Satellite Images from metadata_sat.json
 
 Use `metadata_sat.json` to retrieve the required satellite images and place them under your local satellite image directory.
 
@@ -92,7 +92,7 @@ PowerShell example:
 python evaluate/download_sat_images_from_metadata.py evaluate/metadata/metadata_sat_from_benchmark.json --downloader-exe "C:\path\to\downloader.exe"
 ```
 
-### Running Evaluation
+### 3. Running Evaluation
 
 After the images are downloaded and the paths in the benchmark JSON files are updated to match your local directory structure, run model inference and then evaluate predictions with the scripts under `evaluate/`.
 
