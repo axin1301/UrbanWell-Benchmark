@@ -49,7 +49,7 @@ construct the final benchmark datasets for single-year estimation, multi-year fo
 Install Python dependencies.
 
 ```bash
-conda create -n citylens python==3.10
+conda create -n UrbanWell python==3.10
 pip install -r requirements.txt
 ```
 
