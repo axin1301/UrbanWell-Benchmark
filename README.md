@@ -8,7 +8,6 @@ UrbanWell is a large-scale benchmark designed to systematically evaluate the spa
 
 ![UrbanWell framework](./figs/Framework-v3.png)
 
-*Figure 1. Overview of the UrbanWell benchmark, including the data sources, indicator domains, city coverage, and the three task paradigms.*
 
 ## Pipeline
 
@@ -16,7 +15,6 @@ The benchmark is constructed through a multi-stage pipeline, including data coll
 
 ![UrbanWell pipeline](./figs/pipeline-v2.png)
 
-*Figure 2. End-to-end pipeline of UrbanWell, from multimodal data collection and processing to benchmark construction and MLLM inference.*
 
 ##  Benchmark Composition
 
@@ -185,6 +183,7 @@ flowchart TD
    `single-year estimation`, `multi-year forecasting`, and `multi-year trend analysis`.
 
 4. `benchmark_dataset` contains the final benchmark data.
+
 
 
 
