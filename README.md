@@ -1,5 +1,29 @@
-# Code For UrbanWell
+# UrbanWell
 
+##Introduction
+
+### Framework
+UrbanWell is a multimodal urban benchmarking framework built from satellite imagery, street-view imagery, and urban indicators collected from multiple public data sources. It supports three task paradigms: single-year estimation, multi-year forecasting, and multi-year trend analysis.
+
+![UrbanWell framework](./figs/Framework-v3.png)
+
+*Figure 1. Overview of the UrbanWell benchmark, including the data sources, indicator domains, city coverage, and the three task paradigms.*
+
+###  Pipeline
+
+The benchmark is constructed through a multi-stage pipeline, including data collection, indicator generation, task construction, and MLLM evaluation.
+
+![UrbanWell pipeline](./figs/pipeline-v2.png)
+
+*Figure 2. End-to-end pipeline of UrbanWell, from multimodal data collection and processing to benchmark construction and MLLM inference.*
+
+###  Benchmark Composition
+
+The benchmark covers multiple indicator categories and task settings across cities and years. A detailed composition summary is provided below.
+
+[Benchmark composition figure](./figs/sunburst.pdf)
+
+##Dataset Construction
 This directory contains the code files prepared for constructing the UrbanWell dataset, grouped by module:
 
 - `UrbanAtlas`:
