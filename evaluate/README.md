@@ -1,4 +1,4 @@
-# evaluate
+﻿# evaluate
 
 This folder contains simple utility scripts for benchmark evaluation.
 
@@ -231,6 +231,7 @@ Save outputs:
 ```bash
 python evaluate/evaluate_predictions.py benchmark_dataset/avg_dist_to_restaurant_single_year_final_500.json --predictions predictions.json --output-json evaluate/results/summary.json --output-per-sample evaluate/results/per_sample.json
 ```
+
 
 
 
