@@ -3,7 +3,7 @@
 ## Introduction
 
 ### Framework
-UrbanWell is a multimodal urban benchmarking framework built from satellite imagery, street-view imagery, and urban indicators collected from multiple public data sources. It supports three task paradigms: single-year estimation, multi-year forecasting, and multi-year trend analysis.
+UrbanWell is a large-scale benchmark designed to systematically evaluate the spatio-temporal reasoning capabilities of MLLMs for urban wellbeing analytics through joint modeling of satellite and street view imagery. UrbanWell spans 38 cities across multiple years and includes diverse indicators covering (1) environmental conditions (CO$_2$, NO$2$, PM${2.5}$, and normalized difference vegetation index), (2) spatial accessibility (minimum distance to supermarkets and restaurants), (3) urban form (road length, road density, and land use), (4) urban vitality (population, economic activity diversity, and land use diversity), and (5) subjective perception attributes (e.g., safety, beauty, liveliness, wealth, and quietness). All indicators are aligned at grid level to enable standardized evaluation.
 
 ![UrbanWell framework](./figs/Framework-v3.png)
 
