@@ -24,7 +24,7 @@ The benchmark covers multiple indicator categories and task settings across citi
 
 ![UrbanWell pipeline](./figs/sunburst.png)
 
-##Dataset Construction
+## Codes Structure
 This directory contains the code files prepared for constructing the UrbanWell dataset, grouped by module:
 
 - `UrbanAtlas`:
