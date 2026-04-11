@@ -24,32 +24,35 @@ The benchmark covers multiple indicator categories and task settings across citi
 
 ![UrbanWell pipeline](./figs/sunburst.png)
 
-## Codes Structure
-This directory contains the code files prepared for constructing the UrbanWell dataset, grouped by module:
 
-- `UrbanAtlas`:
-prepare Urban Atlas based inputs, including satellite-image boundaries, land-use data, land-use change data, and land-use mix.
-- `download_sat`:
-download satellite imagery and organize the image metadata used by the later modules.
-- `Worldpop`:
-download WorldPop population raster files and generate population values for each satellite-image region.
-- `try_GSV`:
-generate Street View sampling points, download Street View images, and prepare Street View metadata.
-- `placepulse_models`:
-use pretrained models to generate urban perception scores from Street View images.
-- `OSM_data`:
-download OSM raw data and generate accessibility and economic activity related indicators.
-- `extract_EEA`:
-download environmental raw data and generate CO2, NDVI, NO2, PM2.5, and quiet-area related indicators.
-- `generate_dataset`:
-construct the final benchmark datasets for single-year estimation, multi-year forecasting, and multi-year trend analysis.
+## Codes Structure for Evaluating UrbanWell
+This directory contains the code files prepared for evaluating the UrbanWell benchmark, grouped by module:
+
+- `benchmark_dataset`:
+stores the released benchmark JSON files used for evaluation.
+- `benchmark_dataset_rewritten`:
+stores benchmark JSON files whose image paths have been rewritten to local `sat-image/` and `stv-image/` layouts.
+- `evaluate/metadata`:
+stores released or generated metadata files for downloading satellite and Street View images.
+- `evaluate/download_sat_images_from_metadata.py`:
+download satellite images from `metadata_sat` and organize them under `sat-image/`.
+- `evaluate/download_stv_from_metadata.py`:
+download Street View images from `metadata_stv` and organize them under `stv-image/`.
+- `evaluate/rewrite_benchmark_image_paths.py`:
+rewrite benchmark JSON image paths to local publish layouts before evaluation.
+- `evaluate/global/metrics.py`:
+run MLLM inference through OpenRouter, store model outputs, and compute `R2` and `RMSE`.
+- `sat-image`:
+stores downloaded satellite images for benchmark evaluation.
+- `stv-image`:
+stores downloaded Street View images for benchmark evaluation.
 
 ## Installation
 
 Install Python dependencies.
 
 ```bash
-conda create -n UrbanWell python==3.9
+conda create -n UrbanWell python==3.8
 pip install -r requirements.txt
 ```
 
@@ -72,6 +75,16 @@ Use `metadata_stv.json` to retrieve the required street view images and place th
 ### Downloading Satellite Images from metadata_sat.json
 
 Use `metadata_sat.json` to retrieve the required satellite images and place them under your local satellite image directory.
+
+This step depends on `downloader.exe` from Google Earth Images Downloader. Please install the tool first and make sure `downloader.exe` is available in your runtime environment before running `evaluate/download_sat_images_from_metadata.py`.
+
+You can either place `downloader.exe` in the current working directory, add its folder to your system `PATH`, or pass the full path with `--downloader-exe`.
+
+PowerShell example:
+
+```powershell
+python evaluate/download_sat_images_from_metadata.py evaluate/metadata/metadata_sat_from_benchmark.json --downloader-exe "C:\path\to\downloader.exe"
+```
 
 ### Running Evaluation
 
@@ -155,5 +168,8 @@ flowchart TD
    `single-year estimation`, `multi-year forecasting`, and `multi-year trend analysis`.
 
 4. `benchmark_dataset` contains the final benchmark data.
+
+
+
 
 
