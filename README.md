@@ -51,7 +51,7 @@ Install Python dependencies.
 ```bash
 conda create -n citylens python==3.10
 pip install -r requirements.txt
-
+```
 
 ## Workflow
 
