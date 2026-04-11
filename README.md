@@ -56,6 +56,12 @@ conda create -n UrbanWell python==3.8
 pip install -r requirements.txt
 ```
 
+If you only need the evaluation pipeline, you can install the lighter evaluation-only dependencies:
+
+```bash
+pip install -r requirements-eval.txt
+```
+
 ## UrbanWell Evaluation System User Guide
 
 The current public release is designed to support benchmark evaluation using the provided metadata files and benchmark JSON files.
@@ -168,6 +174,7 @@ flowchart TD
    `single-year estimation`, `multi-year forecasting`, and `multi-year trend analysis`.
 
 4. `benchmark_dataset` contains the final benchmark data.
+
 
 
 
