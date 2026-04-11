@@ -74,11 +74,11 @@ This release mainly focuses on evaluation-time usage: obtaining image data from 
 
 ### 1. Downloading Street View Images from metadata_stv.json
 
-Use `metadata_stv.json` to retrieve the required street view images and place them under your local street view image directory.
+Download the full `metadata_stv.json` file from the Hugging Face dataset [XFengbao/UrbanWell](https://huggingface.co/datasets/XFengbao/UrbanWell) and use it to retrieve the required street view images. You can also generate the metadata locally with `evaluate/build_stv_metadata_from_benchmark.py`.
 
 ### 2. Downloading Satellite Images from metadata_sat.json
 
-Use `metadata_sat.json` to retrieve the required satellite images and place them under your local satellite image directory.
+Download the full `metadata_sat.json` file from the Hugging Face dataset [XFengbao/UrbanWell](https://huggingface.co/datasets/XFengbao/UrbanWell) and use it to retrieve the required satellite images. You can also generate the metadata locally with `evaluate/build_sat_metadata_from_benchmark.py`.
 
 This step depends on `downloader.exe` from Google Earth Images Downloader. Please install the tool first and make sure `downloader.exe` is available in your runtime environment before running `evaluate/download_sat_images_from_metadata.py`.
 
@@ -87,7 +87,7 @@ You can either place `downloader.exe` in the current working directory, add its 
 PowerShell example:
 
 ```powershell
-python evaluate/download_sat_images_from_metadata.py evaluate/metadata/metadata_sat_from_benchmark.json --downloader-exe "C:\path\to\downloader.exe"
+python evaluate/download_sat_images_from_metadata.py path/to/metadata_sat.json --downloader-exe "C:\path\to\downloader.exe"
 ```
 
 ### 3. Running Evaluation
@@ -183,6 +183,7 @@ flowchart TD
    `single-year estimation`, `multi-year forecasting`, and `multi-year trend analysis`.
 
 4. `benchmark_dataset` contains the final benchmark data.
+
 
 
 
