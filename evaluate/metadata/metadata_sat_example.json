@@ -1,0 +1,24 @@
+[
+  {
+    "sat_image_name": "gesh_16812_21150_16.jpg",
+    "year": 2024,
+    "boundary": [
+      52.3609,
+      52.3718,
+      4.7021,
+      4.7085
+    ],
+    "city_name": "AMSTERDAM"
+  },
+  {
+    "sat_image_name": "gesh_15526_19906_16.jpg",
+    "year": 2024,
+    "boundary": [
+      38.6939,
+      38.7047,
+      -9.4239,
+      -9.4153
+    ],
+    "city_name": "LISBOA"
+  }
+]

@@ -1,0 +1,36 @@
+# Core
+numpy
+pandas
+requests
+tqdm
+Pillow
+scipy
+
+# Geospatial processing
+geopandas
+shapely
+fiona
+pyproj
+rasterio
+xarray
+GDAL
+
+# OSM and spatial accessibility
+networkx
+osmnx
+geopy
+scikit-learn
+joblib
+
+# Street View and downloading
+streetview
+func-timeout
+
+# Perception models
+torch
+torchvision
+
+# Semantic segmentation
+mmengine
+mmcv
+mmsegmentation

@@ -1,0 +1,34 @@
+[
+  {
+    "image_name": "street_view_52.37167168234641_4.704438261335667_52.37167168234641_4.704438261335667_2024_2024-07_N-hejm2UzSbPift-z1Eayg_270.jpg",
+    "city_name": "AMSTERDAM",
+    "identifier": "gesh_16812_21150_16",
+    "year": 2024,
+    "date": "2024-07",
+    "pano_id": "N-hejm2UzSbPift-z1Eayg",
+    "heading": 270,
+    "query_lat": 52.37167168234641,
+    "query_lon": 4.704438261335667,
+    "returned_lat": 52.37167168234641,
+    "returned_lon": 4.704438261335667,
+    "pitch": 0,
+    "fov": 90,
+    "source": "google_street_view"
+  },
+  {
+    "image_name": "street_view_52.36084911720599_4.708141081255171_52.36084911720599_4.708141081255171_2024_2024-07_89zdRcAi4h_-x9FfgVYm9g_0.jpg",
+    "city_name": "AMSTERDAM",
+    "identifier": "gesh_16812_21150_16",
+    "year": 2024,
+    "date": "2024-07",
+    "pano_id": "89zdRcAi4h_-x9FfgVYm9g",
+    "heading": 0,
+    "query_lat": 52.36084911720599,
+    "query_lon": 4.708141081255171,
+    "returned_lat": 52.36084911720599,
+    "returned_lon": 4.708141081255171,
+    "pitch": 0,
+    "fov": 90,
+    "source": "google_street_view"
+  }
+]

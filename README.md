@@ -49,9 +49,64 @@ construct the final benchmark datasets for single-year estimation, multi-year fo
 Install Python dependencies.
 
 ```bash
-conda create -n UrbanWell python==3.10
+conda create -n UrbanWell python==3.9
 pip install -r requirements.txt
 ```
+
+## UrbanWell Evaluation System User Guide
+
+The current public release is designed to support benchmark evaluation using the provided metadata files and benchmark JSON files.
+
+At a high level, the evaluation workflow is:
+1. Use the provided metadata files to download or organize the required street view and satellite images.
+2. Place the images into the expected local directories, for example `stv-image/` and `sat-image/`, and update the image paths in the benchmark JSON files if needed.
+3. Run model inference on the benchmark JSON files.
+4. Use the evaluation script to compute the final metrics such as `R2` and `RMSE`.
+
+This release mainly focuses on evaluation-time usage: obtaining image data from metadata, placing the files into the corresponding directories, and running benchmark evaluation. Detailed support for the full benchmark construction pipeline, including raw ground-truth collection, intermediate processing, and benchmark generation, will be provided in the following sections.
+
+### Downloading Street View Images from metadata_stv.json
+
+Use `metadata_stv.json` to retrieve the required street view images and place them under your local street view image directory.
+
+### Downloading Satellite Images from metadata_sat.json
+
+Use `metadata_sat.json` to retrieve the required satellite images and place them under your local satellite image directory.
+
+### Running Evaluation
+
+After the images are downloaded and the paths in the benchmark JSON files are updated to match your local directory structure, run model inference and then evaluate predictions with the scripts under `evaluate/`.
+
+Before running the evaluation command, set your OpenRouter API key.
+
+PowerShell example:
+
+```powershell
+$env:OPENROUTER_API_KEY = "your_openrouter_api_key"
+```
+
+OpenRouter CLI example:
+
+```bash
+python -m evaluate.global.metrics --model_name="openai/gpt-4o" --task_type="single" --task_name="population"
+```
+
+## UrbanWell Benchmark Construction step 1: Data Collection
+
+We will introduce the raw dataset collection procedures.
+
+### 1.1 Urban Atlas Data
+### 1.2 Satellite Image
+### 1.3 Street View Image
+### 1.4 Population Data
+### 1.5 OSM Data
+### 1.6 Environment Data
+
+## UrbanWell Benchmark Construction step 2: Data Processing
+
+## UrbanWell Benchmark Construction step 3: Task Construction
+
+## UrbanWell Benchmark Construction step 4: MLLM Inference
 
 ## Workflow
 
@@ -100,3 +155,5 @@ flowchart TD
    `single-year estimation`, `multi-year forecasting`, and `multi-year trend analysis`.
 
 4. `benchmark_dataset` contains the final benchmark data.
+
+
