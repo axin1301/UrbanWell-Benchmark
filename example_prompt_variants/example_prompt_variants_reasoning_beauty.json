@@ -1,0 +1,19 @@
+[
+    {
+        "id": "beautiful_1219",
+        "sat_image_name": "gesh_18531_19847_16.jpg",
+        "identifier": "none",
+        "year": 2023,
+        "images": [
+            "/wrk-vakka/users/xiyanxin/vllm-dir/project_visual/download_sat/downloaded_sat_2023_zoom_16/ATHINA/2023-07-31/ATHINA/16/18531/gesh_18531_19847_16.jpg",
+            "/wrk-vakka/users/xiyanxin/vllm-dir/project_visual/try_GSV_urban_sup/downloaded_stv_selected/ATHINA/gesh_18531_19847_16/street_view_images/street_view_38.05659254772978_23.59541032791494_38.05659254772978_23.59541032791494_2023_2023-06__fvytdmnWyleBKrUQnqn7A_180.jpg",
+            "/wrk-vakka/users/xiyanxin/vllm-dir/project_visual/try_GSV_urban_sup/downloaded_stv_selected/ATHINA/gesh_18531_19847_16/street_view_images/street_view_38.05655958613869_23.58807460419218_38.05655958613869_23.58807460419218_2023_2023-06_h7bVr3tPy7Js_UcCwtnNkw_180.jpg",
+            "/wrk-vakka/users/xiyanxin/vllm-dir/project_visual/try_GSV_urban_sup/downloaded_stv_selected/ATHINA/gesh_18531_19847_16/street_view_images/street_view_38.05659254772978_23.59541032791494_38.05659254772978_23.59541032791494_2023_2023-06__fvytdmnWyleBKrUQnqn7A_0.jpg",
+            "/wrk-vakka/users/xiyanxin/vllm-dir/project_visual/try_GSV_urban_sup/downloaded_stv_selected/ATHINA/gesh_18531_19847_16/street_view_images/street_view_38.05376445898941_23.59037920894951_38.05376445898941_23.59037920894951_2023_2023-06_Q8FFB5whD6ep1XveQvr4CA_270.jpg"
+        ],
+        "prompt": "Suppose you are a vision expert for sensing urban environment from human perspectives. Examine 5 images from the same region: 1 satellite image from year 2023, and 4 street views from the same year. Consider both the imagery content and the supplementary details given, provide your assessment of the beautiful value using PlacePulse 2.0 dataset as the reference for this area.\nPlacePulse 2.0 is a large-scale crowdsourced dataset where people compared pairs of street view images to judge perceptions of urban environments. It defines six perceptual dimensions: 'safe', 'lively', 'beautiful', 'wealthy', 'boring', and 'depressing'. Each image receives a perceptual score derived from these pairwise comparisons, typically normalized. Interpret the indicator as the PlacePulse 2.0 perceptual score.\nGive a single numeric value from 0.0 to 10.0 with one decimal place only, without explanation.",
+        "reference": 4.5,
+        "city_name": "ATHINA",
+        "prompt_reason": "Examine 5 images from the same region: 1 aerial view from the year 2023, and 4 street-level views from the same year. Based on the visual characteristics of the environment, including structure, condition, activity, and spatial organization, form an overall judgment of the scene's aesthetic appeal. Interpret the visual cues to assess the beauty of the environment. Provide your assessment as a single numeric value from 0.0 to 10.0, with one decimal place only."
+    }
+]
