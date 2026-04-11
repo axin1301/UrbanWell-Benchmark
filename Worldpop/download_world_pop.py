@@ -1,33 +1,32 @@
-﻿import requests
-import os
-#https://data.worldpop.org/GIS/Population/Global_2000_2020/2012/SVN/svn_ppp_2012_UNadj.tif
-#https://data.worldpop.org/GIS/Population/Global_2000_2020/2012/DEU/deu_ppp_2012_UNadj.tif
-# url = "https://data.worldpop.org/GIS/Population/Global_2000_2020/2012/ALB/alb_ppp_2012_UNadj.tif"
-# local_filename = "alb_ppp_2012_UNadj.tif"
+﻿import os
 
-europe_iso3 = [
-    'IRL', 'ITA','DEU'
-]
+import requests
 
-# 'ALB' 'AND', 'AUT', 'BEL', 'BIH', 'BGR', 'HRV', 'CYP', 'CZE', 'DNK',
-    # 'EST', 'FIN', 'FRA', 'DEU', 'GRC', 'HUN', 'ISL', 'IRL', 'ITA', 'LVA',
-    # 'LIE', 'LTU', 'LUX', 'MLT', 'MDA', 'MCO', 'NLD', 'MKD', 'NOR', 'POL',
-    # 'PRT', 'ROU', 'SMR', 'SRB', 'SVK', 'SVN', 'ESP', 'SWE', 'CHE', 'GBR'
+# ISO3 country codes to download. Extend this list as needed.
+EUROPE_ISO3 = ['IRL', 'ITA', 'DEU']
+YEARS = range(2014, 2021)
+OUTPUT_DIR = 'outputs/worldpop_rasters'
+WORLDPOP_URL_TEMPLATE = 'https://data.worldpop.org/GIS/Population/Global_2000_2020/{year}/{country}/{country_lower}_ppp_{year}_UNadj.tif'
 
-for country in europe_iso3:
-    for year in range(2014,2021):#[2020]: #[2012,2018]:
-        # if year == 2012 or year == 2018:
-        #     continue
-        country_lower = country.lower()
-        url = f"https://data.worldpop.org/GIS/Population/Global_2000_2020/{year}/{country}/{country_lower}_ppp_{year}_UNadj.tif"
-        local_filename = f"outputs/worldpop_rasters/{country_lower}_ppp_{year}_UNadj.tif"
-        # if os.path.exists(local_filename):
-        #     continue
-        print(f"requesting {year}/{country}/")
-        with requests.get(url, stream=True) as r:
-            r.raise_for_status()  #
-            with open(local_filename, 'wb') as f:
-                for chunk in r.iter_content(chunk_size=8192):
-                    f.write(chunk)
 
-        print("ä¸‹è½½å®Œæˆ:", local_filename)
+def main():
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+    for country in EUROPE_ISO3:
+        for year in YEARS:
+            country_lower = country.lower()
+            url = WORLDPOP_URL_TEMPLATE.format(year=year, country=country, country_lower=country_lower)
+            local_filename = os.path.join(OUTPUT_DIR, f'{country_lower}_ppp_{year}_UNadj.tif')
+            print(f'requesting {year}/{country}/')
+
+            with requests.get(url, stream=True) as response:
+                response.raise_for_status()
+                with open(local_filename, 'wb') as file_handle:
+                    for chunk in response.iter_content(chunk_size=8192):
+                        file_handle.write(chunk)
+
+            print('downloaded:', local_filename)
+
+
+if __name__ == '__main__':
+    main()

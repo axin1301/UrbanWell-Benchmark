@@ -1,44 +1,60 @@
-﻿import geopandas as gpd
-import pandas as pd
-import fiona
-from pathlib import Path
-import glob
+﻿import glob
 import os
+from pathlib import Path
 
-gpkg_list = glob.glob('unziped_files_LU_change/*/*/Data/*.gpkg')
+import fiona
+import geopandas as gpd
+import pandas as pd
 
-for gpkg_path in gpkg_list:
-    city_name = Path(gpkg_path).parts[1]
+# Input Urban Atlas change packages. Keep the original unzip structure under this folder.
+INPUT_GPKG_GLOB = 'unziped_files_LU_change/*/*/Data/*.gpkg'
+# Output folder for the exported urban-core bbox CSV files.
+OUTPUT_DIR = 'outputs/urbancore_bbox_dir'
+WGS84 = 'EPSG:4326'
 
-    layers = fiona.listlayers(gpkg_path)
-    urbancore_layers = [ly for ly in layers if "urbancore" in ly.lower()]
-    urban_boundary_layer_name = urbancore_layers[0]
 
-    try:
-        gdf_urban = gpd.read_file(gpkg_path, layer=urban_boundary_layer_name)
+def main():
+    gpkg_list = glob.glob(INPUT_GPKG_GLOB)
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-        wgs84 = "EPSG:4326"
-        if gdf_urban.crs != wgs84:
-            gdf_urban = gdf_urban.to_crs(wgs84)
+    for gpkg_path in gpkg_list:
+        city_name = Path(gpkg_path).parts[1]
 
-        union_geom = gdf_urban.unary_union
-        minx, miny, maxx, maxy = union_geom.bounds
+        layers = fiona.listlayers(gpkg_path)
+        urbancore_layers = [layer_name for layer_name in layers if 'urbancore' in layer_name.lower()]
+        if not urbancore_layers:
+            print(f'No urbancore layer found in {gpkg_path}')
+            continue
+        urban_boundary_layer_name = urbancore_layers[0]
 
-        bbox_coords = {
-            "identifier": ["urbancore"],
-            "min_lon": [minx],
-            "max_lon": [maxx],
-            "max_lat": [maxy],
-            "min_lat": [miny],
-        }
-        df_bbox = pd.DataFrame(bbox_coords)
+        try:
+            gdf_urban = gpd.read_file(gpkg_path, layer=urban_boundary_layer_name)
 
-        os.makedirs('outputs/urbancore_bbox_dir/', exist_ok=True)
-        output_csv_path = f"outputs/urbancore_bbox_dir/{city_name}_urbancore_bbox.csv"
-        df_bbox.to_csv(output_csv_path, index=False)
+            if gdf_urban.crs != WGS84:
+                gdf_urban = gdf_urban.to_crs(WGS84)
 
-        print("export urbancore boundary done：", output_csv_path)
-        print(df_bbox)
+            union_geom = gdf_urban.unary_union
+            minx, miny, maxx, maxy = union_geom.bounds
 
-    except Exception as e:
-        print(f"error: {e}")
+            df_bbox = pd.DataFrame(
+                {
+                    'identifier': ['urbancore'],
+                    'min_lon': [minx],
+                    'max_lon': [maxx],
+                    'max_lat': [maxy],
+                    'min_lat': [miny],
+                }
+            )
+
+            output_csv_path = os.path.join(OUTPUT_DIR, f'{city_name}_urbancore_bbox.csv')
+            df_bbox.to_csv(output_csv_path, index=False)
+
+            print('export urbancore boundary done:', output_csv_path)
+            print(df_bbox)
+
+        except Exception as exc:
+            print(f'error while processing {gpkg_path}: {exc}')
+
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,6 @@
+# Python dependencies for evaluation only
+# External tool required for satellite download:
+#   downloader.exe (Google Earth Images Downloader)
+
+requests
+streetview
