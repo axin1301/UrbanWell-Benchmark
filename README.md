@@ -569,6 +569,12 @@ This checklist is intended as the most practical reading path for the constructi
 6. Run `generate_dataset` to build:
    `single-year estimation`, `multi-year forecasting`, and `multi-year trend analysis` benchmarks.
 
+## License
+
+The code in this repository is released under the MIT License. See `LICENSE` for details.
+
+The benchmark data, metadata files, and downloaded imagery may be subject to additional terms and to the licenses of the original data sources. Users should check the source-specific terms for datasets and services such as Copernicus, Google Street View, Google Earth Images Downloader, EEA, ODIAC, Geofabrik / OpenStreetMap, and WorldPop before redistribution or large-scale reuse.
+
 ## Notes
 
 1. API keys have been removed from the submission copy.
@@ -586,6 +592,7 @@ This checklist is intended as the most practical reading path for the constructi
    `single-year estimation`, `multi-year forecasting`, and `multi-year trend analysis`.
 
 4. `benchmark_dataset` contains the final benchmark data.
+
 
 
 
