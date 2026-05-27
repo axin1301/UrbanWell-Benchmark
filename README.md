@@ -20,7 +20,7 @@ The benchmark is constructed through a multi-stage pipeline, including data coll
 
 The benchmark covers multiple indicator categories and task settings across cities and years. A detailed composition summary is provided below.
 
-![UrbanWell pipeline](./figs/sunburst-final.pdf)
+![UrbanWell pipeline](./figs/sunburst-final.png)
 
 
 ## Codes Structure for Evaluating UrbanWell
