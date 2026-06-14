@@ -10,7 +10,6 @@ import streetview
 DEFAULT_FOV = 90
 DEFAULT_PITCH = 0
 DEFAULT_IMAGE_FORMAT = "jpeg"
-GOOGLE_KEY_ENV = "GOOGLE_KEY_MY"
 
 
 def parse_args() -> argparse.Namespace:
@@ -37,6 +36,11 @@ def parse_args() -> argparse.Namespace:
         "--skip-existing",
         action="store_true",
         help="Skip entries when the target file already exists.",
+    )
+    parser.add_argument(
+        "--flat-output",
+        action="store_true",
+        help="Save images directly under --output-dir using only image_name.",
     )
     return parser.parse_args()
 
@@ -78,7 +82,9 @@ def validate_item(item: dict[str, Any], index: int) -> dict[str, Any]:
     return validated
 
 
-def build_output_path(output_dir: Path, item: dict[str, Any]) -> Path:
+def build_output_path(output_dir: Path, item: dict[str, Any], flat_output: bool = False) -> Path:
+    if flat_output:
+        return output_dir / item["image_name"]
     return output_dir / item["city_name"] / item["identifier"] / "street_view_images" / item["image_name"]
 
 
@@ -97,7 +103,7 @@ def main() -> None:
 
     for index, raw_item in enumerate(metadata):
         item = validate_item(raw_item, index)
-        output_path = build_output_path(args.output_dir, item)
+        output_path = build_output_path(args.output_dir, item, flat_output=args.flat_output)
         output_path.parent.mkdir(parents=True, exist_ok=True)
 
         manifest_entry = {
