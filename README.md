@@ -13,7 +13,7 @@ UrbanWell is a large-scale benchmark designed to systematically evaluate the spa
 
 The benchmark is constructed through a multi-stage pipeline, including data collection, indicator generation, task construction, and MLLM evaluation.
 
-![UrbanWell pipeline](./figs/pipeline-v4.png)
+![UrbanWell pipeline](./figs/pipeline-v4-git.png)
 
 
 ##  Benchmark Composition
