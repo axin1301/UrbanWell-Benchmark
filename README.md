@@ -6,14 +6,14 @@ In this work, we introduce UrbanWell, a large-scale benchmark designed to system
 ## Framework
 UrbanWell is a large-scale benchmark designed to systematically evaluate the spatio-temporal reasoning capabilities of MLLMs for urban wellbeing analytics through joint modeling of satellite and street view imagery. UrbanWell spans 38 cities across multiple years and includes diverse indicators covering (1) environmental conditions (CO2, NO2, PM2.5, and normalized difference vegetation index), (2) spatial accessibility (minimum distance to supermarkets and restaurants), (3) urban form (road length, road density, and land use), (4) urban vitality (population, economic activity diversity, and land use diversity), and (5) subjective perception attributes (e.g., safety, beauty, liveliness, wealth, and quietness). All indicators are aligned at grid level to enable standardized evaluation. Beyond static prediction, UrbanWell defines temporal reasoning tasks, including future value forecasting from historical observations and temporal trend classification. We benchmark 15 representative state-of-the-art MLLMs under a zero-shot setting, providing a comprehensive comparative evaluation across spatial and temporal dimensions.
 
-![UrbanWell framework](./figs/Framework-v3.png)
+![UrbanWell framework](./figs/Framework-v4.png)
 
 
 ## Pipeline
 
 The benchmark is constructed through a multi-stage pipeline, including data collection, indicator generation, task construction, and MLLM evaluation.
 
-![UrbanWell pipeline](./figs/pipeline-v2.png)
+![UrbanWell pipeline](./figs/pipeline-v4.png)
 
 
 ##  Benchmark Composition
