@@ -26,9 +26,7 @@ The benchmark covers multiple indicator categories and task settings across citi
 ## Codes Structure for Evaluating UrbanWell
 This directory contains the code files prepared for evaluating the UrbanWell benchmark, grouped by module:
 
-- `benchmark_dataset`:
-stores the released benchmark JSON files used for evaluation.
-- `benchmark_dataset_rewritten`:
+- `benchmark_dataset_final`:
 stores benchmark JSON files whose image paths have been rewritten to local `sat-image/` and `stv-image/` layouts.
 - `evaluate/metadata`:
 stores released or generated metadata files for downloading satellite and Street View images.
@@ -490,7 +488,7 @@ Main processing logic:
 
 The evaluation pipeline stores:
 - downloaded images under `sat-image/` and `stv-image/`
-- rewritten benchmark JSON files under `benchmark_dataset_rewritten/`
+- unzip benchmark JSON files under `benchmark_dataset_final/`
 - model predictions under `evaluate/results/<MODEL_NAME>/<TASK_TYPE>/<TASK_NAME>/predictions.json`
 - metric summaries under `evaluate/results/<MODEL_NAME>/<TASK_TYPE>/<TASK_NAME>/summary.json`
 
@@ -591,7 +589,7 @@ The benchmark data, metadata files, and downloaded imagery may be subject to add
 3. The code in `generate_dataset` organizes the final tasks into:
    `single-year estimation`, `multi-year forecasting`, and `multi-year trend analysis`.
 
-4. `benchmark_dataset` contains the final benchmark data.
+4. `benchmark_dataset_final` contains the final benchmark data.
 
 
 
