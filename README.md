@@ -593,6 +593,20 @@ The benchmark data, metadata files, and downloaded imagery may be subject to add
 
 
 
+## Citation
+
+If you find this repository useful for your research, please consider citing our paper:
+
+> UrbanWell: Benchmarking Multimodal Large Language Models for Spatio-Temporal Urban Wellbeing Analytics
+
+```bibtex
+@article{xi2026urbanwell,
+  title={UrbanWell: Benchmarking Multimodal Large Language Models for Spatio-Temporal Urban Wellbeing Analytics},
+  author={Xi, Yanxin and Su, Xiang and Feng, Jie and Liu, Yu and Tarkoma, Sasu and Hui, Pan},
+  journal={arXiv preprint arXiv:2606.15890},
+  year={2026}
+}
+```
 
 
 
